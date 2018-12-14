@@ -42,8 +42,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
     }
     
     @IBAction func converImageToByteArray(_ sender: Any) {
-        print("✅ conver to byte array action")
-        _ = convertImage(imageView.image!)
+        
+        let byteArray = convertImage(imageView.image!)
+        
+        print("✅🚥 byteArrray.count: \(byteArray.count)")
 
     }
     
@@ -62,16 +64,10 @@ class ViewController: UIViewController, UINavigationControllerDelegate, UIImageP
         let byteArray : NSMutableArray = NSMutableArray()
 
         for i in stride(from: 0, to: count, by: 1) {
-            
-            print("🚥 byte: \(NSNumber(value: bytes[i]))")
+//            print("🚥 byte: \(NSNumber(value: bytes[i]))")
             byteArray.add(NSNumber(value: bytes[i]))
-            
-            
         }
-        
         return byteArray
-        
-        
     }
     
     
